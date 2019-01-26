@@ -15,15 +15,15 @@ This is achieved by checking out ez platform and (sym-)linking your ezpublish-ke
 ## How to setup
 
 1) Checkout ezpublish-kernel and create a new branch to start working on a FIX, TASK, FEATURE.
-2) Clone this repository into your working directory. `git clone https://github.com/RozbehSharahi/ezpublish-kernel-rest-functional-tests`
-3) Edit `EZ_PLATFORM_VERSION` variable in `ezpublish-kernel-rest-functional-tests/bin/setup.sh` to an eZ Platform version that will require your branch or needs to be compatible.
-4) Run `sh ezpublish-kernel-rest-functional-tests/bin/setup.sh` to build docker images.
+2) Clone this repository into your working directory. `git clone https://github.com/RozbehSharahi/ezpublish-kernel-rest-functional-tests rest-testing`
+3) Edit `EZ_PLATFORM_VERSION` variable in ` rest-testing/bin/setup.sh` to an eZ Platform version that will require your branch or needs to be compatible.
+4) Run `sh rest-testing/bin/setup.sh` to build docker images.
 
 ## Running tests
 
 When setup is done you can run the functional tests by:
 
-`sh ezpublish-kernel-rest-functional-tests/bin/test.sh`
+`sh  rest-testing/bin/test.sh`
 
 ## Important notice
 
