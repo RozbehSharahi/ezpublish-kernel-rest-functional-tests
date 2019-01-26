@@ -6,7 +6,7 @@ This packages is for simplifying functional tests when contributing on *eZ Publi
  Kernel - REST Bundle*.
  
 This will basically
-1) Create a build of eZ Platform by the version specified in `bin/setup.sh`
+1) Create a build of eZ Platform with a specific version
 2) Start the docker containers for testing
 3) Run the functional tests with your current work on ezpublish-kernel
 

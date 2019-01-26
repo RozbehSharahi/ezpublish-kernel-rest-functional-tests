@@ -6,11 +6,14 @@ BASE_DIR=$(dirname "$SCRIPT")
 
 # Dynamically get absolute base dir
 EZ_PLATFORM_BUILD_DIR=${BASE_DIR}/../build/ezsystems/ezplatform
-EZ_PLATFORM_VERSION=1.7
 PROJECT_DIR=${BASE_DIR}/../../
 
 # Create dir
 mkdir -p ${EZ_PLATFORM_BUILD_DIR}
+
+# Which version
+echo "Which version/branch of ez Platform do you want to install? (f.i.: master or 1.7)"
+read EZ_PLATFORM_VERSION
 
 # Go into dir
 cd ${EZ_PLATFORM_BUILD_DIR}
