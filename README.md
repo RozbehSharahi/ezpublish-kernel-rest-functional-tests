@@ -19,6 +19,8 @@ This is achieved by checking out ez platform and (sym-)linking your ezpublish-ke
 3) Edit `EZ_PLATFORM_VERSION` variable in ` rest-testing/bin/setup.sh` to an eZ Platform version that will require your branch or needs to be compatible.
 4) Run `sh rest-testing/bin/setup.sh` to build docker images.
 
+*It will take a while until the database is ready for functional testing. After doing the setup please wait a while until you run the tests*
+
 ## Running tests
 
 When setup is done you can run the functional tests by:
