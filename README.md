@@ -15,9 +15,8 @@ This is achieved by checking out ez platform and (sym-)linking your ezpublish-ke
 ## How to setup
 
 1) Checkout ezpublish-kernel and create a new branch to start working on a FIX, TASK, FEATURE.
-2) Clone this repository into your working directory. `git clone https://github.com/RozbehSharahi/ezpublish-kernel-rest-functional-tests rest-testing`
-3) Edit `EZ_PLATFORM_VERSION` variable in ` rest-testing/bin/setup.sh` to an eZ Platform version that will require your branch or needs to be compatible.
-4) Run `sh rest-testing/bin/setup.sh` to build docker images.
+2) Clone this repository into your working directory. <br />`git clone https://github.com/RozbehSharahi/ezpublish-kernel-rest-functional-tests rest-testing`
+3) Run <br />`sh rest-testing/bin/setup.sh` <br />to build docker images.
 
 *It will take a while until the database is ready for functional testing. After doing the setup please wait a while until you run the tests*
 
