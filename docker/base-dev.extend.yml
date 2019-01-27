@@ -1,0 +1,9 @@
+version: '3.3'
+# Single server setup for dev
+
+services:
+  app:
+    volumes:
+      - ${COMPOSE_DIR}/../../:/var/www:cached
+      - ${COMPOSER_HOME}:/root/.composer:cached
+      - ${COMPOSE_DIR}/../../../../../../:/var/ezpublish-kernel:cached

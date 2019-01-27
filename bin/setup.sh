@@ -6,14 +6,19 @@ BASE_DIR=$(dirname "$SCRIPT")
 
 # Dynamically get absolute base dir
 EZ_PLATFORM_BUILD_DIR=${BASE_DIR}/../build/ezsystems/ezplatform
-PROJECT_DIR=${BASE_DIR}/../../
 
-# Create dir
-mkdir -p ${EZ_PLATFORM_BUILD_DIR}
+# Get the working dir
+PROJECT_DIR=${BASE_DIR}/../../
 
 # Which version
 echo "Which version/branch of ez Platform do you want to install? (f.i.: master or 1.7)"
 read EZ_PLATFORM_VERSION
+
+# Remove old setups fist
+/bin/bash ${BASE_DIR}/clean.sh
+
+# Create dir
+mkdir -p ${EZ_PLATFORM_BUILD_DIR}
 
 # Go into dir
 cd ${EZ_PLATFORM_BUILD_DIR}
@@ -24,13 +29,9 @@ git clone https://github.com/ezsystems/ezplatform.git .
 # Checkout compatible version
 git checkout ${EZ_PLATFORM_VERSION}
 
-# Replace kernel with your current work dir
-if [[ ! -L vendor/ezsystems/ezpublish-kernel/ ]]; then
-    rm -rf vendor/ezsystems/ezpublish-kernel/
-    ln -s ${PROJECT_DIR} vendor/ezsystems/ezpublish-kernel
-fi
-
 # Start docker
-echo "Building docker, this will take a while, please wait until the container aborts."
-COMPOSE_FILE="doc/docker/base-dev.yml:doc/docker/selenium.yml" \
- docker-compose -f doc/docker/install.yml up --abort-on-container-exit
+docker-compose \
+ -f ${EZ_PLATFORM_BUILD_DIR}/doc/docker/base-dev.yml \
+ -f ${EZ_PLATFORM_BUILD_DIR}/doc/docker/selenium.yml \
+ -f ${BASE_DIR}/../docker/base-dev.extend.yml \
+ up -d

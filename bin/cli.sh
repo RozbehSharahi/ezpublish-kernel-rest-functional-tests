@@ -12,7 +12,4 @@ docker-compose \
  -f ${EZ_PLATFORM_BUILD_DIR}/doc/docker/base-dev.yml \
  -f ${EZ_PLATFORM_BUILD_DIR}/doc/docker/selenium.yml \
  -f ${BASE_DIR}/../docker/base-dev.extend.yml \
- down --remove-orphans
-
-# Go to ezplatform
-sudo rm -rf ${EZ_PLATFORM_BUILD_DIR}
+ exec app sh

@@ -24,7 +24,7 @@ This is achieved by checking out ez platform and (sym-)linking your ezpublish-ke
 
 When setup is done you can run the functional tests by:
 
-`sh  rest-testing/bin/test.sh`
+`sh rest-testing/bin/test.sh`
 
 ## Important notice
 
