@@ -12,4 +12,4 @@ docker-compose \
  -f ${EZ_PLATFORM_BUILD_DIR}/doc/docker/base-dev.yml \
  -f ${EZ_PLATFORM_BUILD_DIR}/doc/docker/selenium.yml \
  -f ${BASE_DIR}/../docker/base-dev.extend.yml \
- exec app sh
+ exec app bash

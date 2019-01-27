@@ -29,9 +29,18 @@ git clone https://github.com/ezsystems/ezplatform.git .
 # Checkout compatible version
 git checkout ${EZ_PLATFORM_VERSION}
 
+cp ${BASE_DIR}/../tools/add-kernel-path-to-composer.php ${EZ_PLATFORM_BUILD_DIR}
+
 # Start docker
 docker-compose \
  -f ${EZ_PLATFORM_BUILD_DIR}/doc/docker/base-dev.yml \
  -f ${EZ_PLATFORM_BUILD_DIR}/doc/docker/selenium.yml \
  -f ${BASE_DIR}/../docker/base-dev.extend.yml \
  up -d
+
+# Modify composer.json to use mounted working kernel
+docker-compose \
+ -f ${EZ_PLATFORM_BUILD_DIR}/doc/docker/base-dev.yml \
+ -f ${EZ_PLATFORM_BUILD_DIR}/doc/docker/selenium.yml \
+ -f ${BASE_DIR}/../docker/base-dev.extend.yml \
+ exec app sh -c "php add-kernel-path-to-composer.php"
